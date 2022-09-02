@@ -10,12 +10,28 @@
 <script>
     var size = 14;
     function decrease(){
-        document.getElementById('p1').style.fontSize = "x-large";
+        let font = ["#p1"];
+        font.forEach(id => {
+
+            let x = document.querySelector(id);
+            let fontSize = window.getComputedStyle(x, null).getPropertyValue("font-size")
+
+            fontSize = parseFloat(fontSize);
+            x.style.fontSize = (fontSize - size) + "px";
+        });
 
     }
 
     function increase(){
-        document.getElementById('p1').style.fontSize = "3em";
+        let font = ["#p1"];
+        font.forEach(id => {
+
+            let x = document.querySelector(id);
+            let fontSize = window.getComputedStyle(x, null).getPropertyValue("font-size")
+
+            fontSize = parseFloat(fontSize);
+            x.style.fontSize = (fontSize + size) + "px";
+        });
     }
 
 </script>
